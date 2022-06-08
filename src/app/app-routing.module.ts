@@ -9,6 +9,7 @@ import { AdminComponent } from './layouts/admin/admin.component';
 import { ProductListComponent } from './pages/admin/product-list/product-list.component';
 import { ProductFormComponent } from './pages/admin/product-form/product-form.component';
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -32,12 +33,17 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+
     children: [
+      {
+        path:'dashboard',
+        component:DashboardComponent
+      },
       {
         path: 'products',
         children: [
           {
-            path: '',
+            path: 'list',
             component: ProductListComponent
 
           },
