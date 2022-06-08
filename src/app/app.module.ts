@@ -12,6 +12,8 @@ import { ProductListComponent } from './pages/admin/product-list/product-list.co
 import { ProductFormComponent } from './pages/admin/product-form/product-form.component';
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
     ProductListComponent,
     ProductFormComponent,
     ProductEditComponent,
-    DashboardComponent
+    DashboardComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

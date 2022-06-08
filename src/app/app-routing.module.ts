@@ -10,6 +10,7 @@ import { ProductListComponent } from './pages/admin/product-list/product-list.co
 import { ProductFormComponent } from './pages/admin/product-form/product-form.component';
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { SigninComponent } from './pages/signin/signin.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,11 @@ const routes: Routes = [
 
       }
     ]
+  },
+  {
+    path: 'signin',
+    component: SigninComponent
+
   }
 ]
 
