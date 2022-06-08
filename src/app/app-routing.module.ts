@@ -11,6 +11,7 @@ import { ProductFormComponent } from './pages/admin/product-form/product-form.co
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { SigninComponent } from './pages/signin/signin.component';
+import { ProductDetailComponent } from './pages/client/product-detail/product-detail.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: 'about',
         component: AboutComponent
+      },
+      {
+        path:'detail/:id',
+        component: ProductDetailComponent
       }
     ]
   },
@@ -53,7 +58,7 @@ const routes: Routes = [
             component: ProductFormComponent
           },
           {
-            path: 'edit',
+            path: 'edit/:id',
             component: ProductEditComponent
           }
         ]

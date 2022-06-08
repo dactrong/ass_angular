@@ -14,7 +14,9 @@ import { ProductEditComponent } from './pages/admin/product-edit/product-edit.co
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
-
+// Đây là module cung cấp các phuwogn thức component sử dung api
+import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailComponent } from './pages/client/product-detail/product-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,11 +30,13 @@ import { SignupComponent } from './pages/signup/signup.component';
     ProductEditComponent,
     DashboardComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

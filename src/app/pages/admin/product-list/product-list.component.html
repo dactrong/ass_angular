@@ -13,24 +13,24 @@
               <th> Tên sản phẩm </th>
               <th> Số lượng </th>
               <th> Giá sản phẩm </th>
-              <th> Ngày tháng </th>
+              <th> Mô tả </th>
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr *ngFor ="let product of products">
               <td class="py-1">
-                <img src="/assets/admin/images/faces-clipart/pic-1.png" alt="image" />
+                <img src=" {{product.images}}" alt="image" />
               </td>
-              <td> Herman Beck </td>
-              <td>
-                <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+              <td> {{product.name}}</td>
+             
+              <td>  {{product.quantity}} </td>
+              <td> $ {{product.price}} </td>
+              <td>  {{product.desc}} </td>
+              <td >
+                <button class="btn btn-danger" (click)="onDelete(product._id)">Delete</button>
+                <a routerLink="/admin/products/edit" >Edit</a>
               </td>
-              <td> $ 77.99 </td>
-              <td> May 15, 2015 </td>
-              <td class="btn btn-warning"><a routerLink="/admin/products/edit">Edit</a></td>
-              <td class="btn btn-danger"><a routerLink="/admin/products/edit">Xóa</a></td>
+              
 
             </tr>
          
