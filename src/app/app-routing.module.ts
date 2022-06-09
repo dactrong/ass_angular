@@ -12,6 +12,8 @@ import { ProductEditComponent } from './pages/admin/product-edit/product-edit.co
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { ProductDetailComponent } from './pages/client/product-detail/product-detail.component';
+import { CategoryFormComponent } from './pages/admin/category-form/category-form.component';
+import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
 
 const routes: Routes = [
   {
@@ -31,7 +33,7 @@ const routes: Routes = [
         component: AboutComponent
       },
       {
-        path:'detail/:id',
+        path: 'detail/:id',
         component: ProductDetailComponent
       }
     ]
@@ -42,8 +44,8 @@ const routes: Routes = [
 
     children: [
       {
-        path:'dashboard',
-        component:DashboardComponent
+        path: 'dashboard',
+        component: DashboardComponent
       },
       {
         path: 'products',
@@ -63,12 +65,36 @@ const routes: Routes = [
           }
         ]
 
+      },
+      {
+        path: 'category',
+        children: [
+          {
+            path: 'list',
+            component: CategoryListComponent
+          },
+          {
+            path: 'create',
+            component: CategoryFormComponent
+          },
+          {
+            path: 'edit/:id',
+            component: CategoryFormComponent
+          }
+
+        ]
       }
     ]
   },
   {
-    path: 'signin',
-    component: SigninComponent
+    path: 'auth',
+    children: [
+      {
+        path: 'signin',
+        component: SigninComponent
+      }
+
+    ]
 
   }
 ]

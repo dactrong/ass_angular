@@ -19,6 +19,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './pages/client/product-detail/product-detail.component';
 import { ValidateComponent } from './component/validate/validate.component';
+import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
+import { CategoryFormComponent } from './pages/admin/category-form/category-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,9 @@ import { ValidateComponent } from './component/validate/validate.component';
     SigninComponent,
     SignupComponent,
     ProductDetailComponent,
-    ValidateComponent
+    ValidateComponent,
+    CategoryListComponent,
+    CategoryFormComponent
   ],
   imports: [
     BrowserModule,

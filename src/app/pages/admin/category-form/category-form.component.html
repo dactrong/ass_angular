@@ -1,0 +1,19 @@
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Thêm sản phẩm</h4>
+        <!-- định nghĩa xem fom đk quản lý bởi biến nào -->
+        <form class="forms-sample" [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+          <div class="form-group" >
+            <label for="exampleInputName1">Name</label>
+            <!-- định nghĩa input sẽ đk quản lý bằng form nào -->
+            <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" formControlName="name">
+           <app-validate [field]="categoryForm.get('name') " key ="Tên sản phẩm"></app-validate>
+          </div>
+         
+          <button type="submit" [disabled]="!categoryForm.valid" class="btn btn-gradient-primary me-2">Submit</button>
+          <button class="btn btn-light">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>

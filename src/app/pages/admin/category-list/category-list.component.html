@@ -1,0 +1,33 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        
+      <div class="card-body">
+        <h4 class="card-title">Striped Table</h4>
+        
+        <div class="btn btn-success"><a routerLink="/admin/category/create">Thêm mới</a></div>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th> Tên danh mục </th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor ="let category of category">
+              
+             <td>{{ category.name}}</td>
+             <td>
+                <button class="btn btn-danger" (click)="onDelete(category._id)">Delete</button>
+                <a routerLink="/admin/category/edit/{{ category._id }}" ><button class=" btn btn-info">Edit</button></a>
+              </td>
+              
+
+            </tr>
+         
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+ 
