@@ -24,11 +24,11 @@
               <td> {{product.name}}</td>
              
               <td>  {{product.quantity}} </td>
-              <td> $ {{product.price}} </td>
+              <td> ${{product.price}} </td>
               <td>  {{product.desc}} </td>
               <td >
                 <button class="btn btn-danger" (click)="onDelete(product._id)">Delete</button>
-                <a routerLink="/admin/products/edit" >Edit</a>
+                <a routerLink="/admin/products/edit/{{product._id}}" ><button class=" btn btn-info">Edit</button></a>
               </td>
               
 

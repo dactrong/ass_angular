@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+// import thwu viện ReactFormmodul
+import {ReactiveFormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { ClientComponent } from './layouts/client/client.component';
 import { AdminComponent } from './layouts/admin/admin.component';
@@ -17,6 +18,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 // Đây là module cung cấp các phuwogn thức component sử dung api
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './pages/client/product-detail/product-detail.component';
+import { ValidateComponent } from './component/validate/validate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,11 +33,13 @@ import { ProductDetailComponent } from './pages/client/product-detail/product-de
     DashboardComponent,
     SigninComponent,
     SignupComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ValidateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule, // Đưa vào để Admin Product Form su dụng
     HttpClientModule
   ],
   providers: [],
