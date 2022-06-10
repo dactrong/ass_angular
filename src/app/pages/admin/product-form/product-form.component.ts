@@ -20,7 +20,7 @@ export class ProductFormComponent implements OnInit {
         Validators.required,
         Validators.minLength(6),
         Validators.maxLength(32),
-        this.onValidateNameHasProduct // tên custom validate
+        // this.onValidateNameHasProduct // tên custom validate
       ]),
       price: new FormControl('', [
         Validators.required,

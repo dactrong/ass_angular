@@ -20,7 +20,6 @@ export class CategoryService {
   deleteCategory(_id: string): Observable<any> {
     return this.http.delete(`${environment.category}/${_id}`);
   }
- 
   createCategory(data: CategoryCreate): Observable<Category> {
     return this.http.post<Category>(`${environment.category}`, data)
   }
