@@ -21,6 +21,8 @@ import { ProductDetailComponent } from './pages/client/product-detail/product-de
 import { ValidateComponent } from './component/validate/validate.component';
 import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
 import { CategoryFormComponent } from './pages/admin/category-form/category-form.component';
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +46,8 @@ import { CategoryFormComponent } from './pages/admin/category-form/category-form
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule, // Đưa vào để Admin Product Form su dụng
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

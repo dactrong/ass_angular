@@ -14,6 +14,7 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { ProductDetailComponent } from './pages/client/product-detail/product-detail.component';
 import { CategoryFormComponent } from './pages/admin/category-form/category-form.component';
 import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
+import { CanAccessAdminGuard } from './guards/can-access-admin.guard';
 
 const routes: Routes = [
   {
@@ -35,12 +36,24 @@ const routes: Routes = [
       {
         path: 'detail/:id',
         component: ProductDetailComponent
+      },
+      {
+        path: 'auth',
+        children: [
+          {
+            path: 'signin',
+            component: SigninComponent
+          }
+    
+        ]
+    
       }
     ]
   },
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate:[CanAccessAdminGuard],// đưa vào để chặn nếu không login thì ko vào admin dược
 
     children: [
       {
@@ -86,22 +99,13 @@ const routes: Routes = [
       }
     ]
   },
-  {
-    path: 'auth',
-    children: [
-      {
-        path: 'signin',
-        component: SigninComponent
-      }
-
-    ]
-
-  }
+  
 ]
 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [CanAccessAdminGuard] // DDuwad vào để các router trên cso thể sử dụng
 })
 export class AppRoutingModule { }

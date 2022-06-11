@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',
@@ -11,9 +12,11 @@ export class ProductFormComponent implements OnInit {
   productForm: FormGroup;
   productId: string;
   constructor(
+    private toastr: ToastrService ,
+
     private productService: ProductService, // cung cấp product
     private router: Router, // cung cấp navigate điều hướng
-    private activatedRoute: ActivatedRoute // lấy ra các tham số trong url
+    private activatedRoute: ActivatedRoute// lấy ra các tham số trong url
   ) {
     this.productForm = new FormGroup({
       name: new FormControl('', [
@@ -83,6 +86,7 @@ export class ProductFormComponent implements OnInit {
     return this.productService.createProduct(submitData).subscribe((data) => {
       //  3. Sau khi api call thành công sẽ điều hướng về danh sách 
       // this.router.navigate(['/admin','products']);
+      this.toastr.success("Hello, I'm the toastr message.")
       this.router.navigateByUrl('/admin/products/list')
     })
   }

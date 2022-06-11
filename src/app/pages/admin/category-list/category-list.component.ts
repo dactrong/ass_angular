@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from 'src/app/types/category';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-category-list',
@@ -9,7 +10,10 @@ import { Category } from 'src/app/types/category';
 })
 export class CategoryListComponent implements OnInit {
     category: Category[];
-  constructor( private categoryService: CategoryService) { 
+  constructor( 
+    private categoryService: CategoryService,
+    private toastrService: ToastrService,
+    ) { 
     this.category =[]
   }
 
@@ -32,7 +36,11 @@ export class CategoryListComponent implements OnInit {
           console.log(data);
           this.onGetList();
         })      
+       
+        this.toastrService.success("Xóa thành công.")
+
     }
+
     // Cập nhật lại dữ liệu
   }
 
