@@ -17,7 +17,7 @@ export class AuthService {
     return this.http.post<TypeSigninResponse>(`${environment.login}`, data);
   }
   getAuth(): Observable<User[]> {
-    return this.http.get<User[]>(environment.products);
+    return this.http.get<User[]>(environment.user);
   }
   getUser(_id: string): Observable<User> {
     return this.http.get<User>(`${environment.products}/${_id}`)

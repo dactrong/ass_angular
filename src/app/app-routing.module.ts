@@ -16,6 +16,7 @@ import { CategoryFormComponent } from './pages/admin/category-form/category-form
 import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
 import { CanAccessAdminGuard } from './guards/can-access-admin.guard';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AuthListComponent } from './pages/admin/auth-list/auth-list.component';
 
 const routes: Routes = [
   {
@@ -46,19 +47,19 @@ const routes: Routes = [
             component: SigninComponent
           },
           {
-            path:'signup',
+            path: 'signup',
             component: SignupComponent
           }
-    
+
         ]
-    
+
       }
     ]
   },
   {
     path: 'admin',
     component: AdminComponent,
-    canActivate:[CanAccessAdminGuard],// đưa vào để chặn nếu không login thì ko vào admin dược
+    canActivate: [CanAccessAdminGuard],// đưa vào để chặn nếu không login thì ko vào admin dược
 
     children: [
       {
@@ -101,10 +102,22 @@ const routes: Routes = [
           }
 
         ]
+      },
+      {
+        path: 'auth',
+        children: [
+          {
+            path: 'list',
+            component: AuthListComponent
+          }
+        ]
+
+
+
       }
     ]
   },
-  
+
 ]
 
 

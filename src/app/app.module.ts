@@ -22,6 +22,7 @@ import { ValidateComponent } from './component/validate/validate.component';
 import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
 import { CategoryFormComponent } from './pages/admin/category-form/category-form.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AuthListComponent } from './pages/admin/auth-list/auth-list.component';
 // import  {  BrowserAnimationsModule  }  from  '@angle/platform-browser/animations' ;
 
 
@@ -43,7 +44,8 @@ import { ToastrModule } from 'ngx-toastr';
     ProductDetailComponent,
     ValidateComponent,
     CategoryListComponent,
-    CategoryFormComponent
+    CategoryFormComponent,
+    AuthListComponent
   ],
   imports: [
     BrowserModule,

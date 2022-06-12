@@ -10,6 +10,7 @@ export const environment = {
   category: `${apiUrl}/category`,
   login: `${apiUrl}/signin`,
   signup: `${apiUrl}/signup`,
+  user:`${apiUrl}/user`
 
 };
 
