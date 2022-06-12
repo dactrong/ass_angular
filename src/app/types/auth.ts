@@ -11,3 +11,19 @@ export type TypeSigninResponse ={
         password:string
     }
 }
+export type User ={
+    _id:string,
+    name:string,
+    phone:number,
+    email:string,
+    address:string,
+    password:string
+};
+
+export type UserCreate ={
+    name:string,
+    phone:number,
+    email:string,
+    address:string,
+    password:string
+}

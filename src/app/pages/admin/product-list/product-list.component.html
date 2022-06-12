@@ -27,6 +27,10 @@
               <td>  {{product.quantity}} </td>
               <td> ${{product.price}} </td>
               <td>  {{product.desc}} </td>
+              <td>  {{product.sale}} </td>
+              <td>  {{product.status}} </td>
+              <!-- <td>  {{product.category}} </td> -->
+
               <td >
                 <button class="btn btn-danger" (click)="onDelete(product._id)">Delete</button>
                 <a routerLink="/admin/products/edit/{{product._id}}" ><button class=" btn btn-info">Edit</button></a>

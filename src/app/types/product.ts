@@ -4,6 +4,9 @@ export type Product ={
     price:number,
     quantity:number,
     images:string,
+    category:string,
+    sale:number,
+    status:string,
     desc:string
 };
 
@@ -12,5 +15,8 @@ export type ProductCreate ={
     price:number,
     quantity:number,
     images:string,
+    category:string,
+    sale:number,
+    status:string,
     desc:string
 }

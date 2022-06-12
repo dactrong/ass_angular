@@ -15,6 +15,7 @@ import { ProductDetailComponent } from './pages/client/product-detail/product-de
 import { CategoryFormComponent } from './pages/admin/category-form/category-form.component';
 import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
 import { CanAccessAdminGuard } from './guards/can-access-admin.guard';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
           {
             path: 'signin',
             component: SigninComponent
+          },
+          {
+            path:'signup',
+            component: SignupComponent
           }
     
         ]

@@ -1,1 +1,65 @@
-<p>signup works!</p>
+<div class="container " id="container">
+    <!-- <div class="form-container sign-up-container">
+      <form >
+        <h1>Create Account</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>or use your email for registration</span>
+        <input type="text" placeholder="Name"  />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button>Sign Up</button>
+      </form>
+    </div> -->
+    <div class=" sign-in-container">
+      <form  [formGroup]="signupForm" (ngSubmit)="onSubmit()" >
+        
+       <h3>Sign Up</h3>
+        <input type="text" placeholder="Name" formControlName="name" />
+        <app-validate [field]="signupForm.get('name') " key ="Tên "></app-validate>
+
+        <input type="email" placeholder="Email" formControlName="email" />
+        <app-validate [field]="signupForm.get('email') " key ="Email "></app-validate>
+
+        <input type="password" placeholder="Password" formControlName="password" />
+        <app-validate [field]="signupForm.get('password') " key ="Password "></app-validate>
+
+        <input type="text" placeholder="Phone" formControlName="phone" />
+        <app-validate [field]="signupForm.get('phone') " key ="SDT "></app-validate>
+
+        <input type="text" placeholder="Address" formControlName="address" /> 
+                <app-validate [field]="signupForm.get('address') " key ="Địa chỉ "></app-validate>
+
+
+        <a href="#">Forgot your password?</a>
+        <button>Sign In</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button class="ghost" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Enter your personal details and start journey with us</p>
+          <button class="ghost" id="signUp"><a  routerLink="/auth/signup">Sign Up</a> </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>
+      Created with <i class="fa fa-heart"></i> by
+      <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+      - Read how I created this and how you can join the challenge
+      <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+    </p>
+  </footer>
+  

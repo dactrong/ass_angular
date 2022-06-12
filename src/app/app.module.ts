@@ -22,6 +22,9 @@ import { ValidateComponent } from './component/validate/validate.component';
 import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
 import { CategoryFormComponent } from './pages/admin/category-form/category-form.component';
 import { ToastrModule } from 'ngx-toastr';
+// import  {  BrowserAnimationsModule  }  from  '@angle/platform-browser/animations' ;
+
+
 
 @NgModule({
   declarations: [
@@ -47,6 +50,7 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     ReactiveFormsModule, // Đưa vào để Admin Product Form su dụng
     HttpClientModule,
+    // BrowserAnimationsModule ,  
     ToastrModule.forRoot()
   ],
   providers: [],

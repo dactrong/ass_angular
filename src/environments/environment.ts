@@ -8,7 +8,8 @@ export const environment = {
   production: false,
   products: `${apiUrl}/products`,
   category: `${apiUrl}/category`,
-  login: `${apiUrl}/signin`
+  login: `${apiUrl}/signin`,
+  signup: `${apiUrl}/signup`,
 
 };
 

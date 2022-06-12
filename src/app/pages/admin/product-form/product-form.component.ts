@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors }
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { ToastrService } from 'ngx-toastr';
+import { Category } from 'src/app/types/category';
+import { CategoryService } from 'src/app/services/category.service';
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',
@@ -11,13 +13,16 @@ import { ToastrService } from 'ngx-toastr';
 export class ProductFormComponent implements OnInit {
   productForm: FormGroup;
   productId: string;
+  category:Category[];
   constructor(
     private toastr: ToastrService ,
+    private categoryService: CategoryService,
 
     private productService: ProductService, // cung cấp product
     private router: Router, // cung cấp navigate điều hướng
     private activatedRoute: ActivatedRoute// lấy ra các tham số trong url
   ) {
+    this.category = [];
     this.productForm = new FormGroup({
       name: new FormControl('', [
         Validators.required,
@@ -34,6 +39,17 @@ export class ProductFormComponent implements OnInit {
       quantity: new FormControl('', [
         Validators.required,
       ]),
+      sale: new FormControl('', [
+        Validators.required,
+      ]),
+      status: new FormControl('', [
+        Validators.required,
+      ]),
+      category: new FormControl('', [
+        Validators.required,
+      ]),
+    
+    
       desc: new FormControl(''),
     });
 
@@ -41,6 +57,9 @@ export class ProductFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.categoryService.getCategory().subscribe((data) =>{
+      this.category = data;
+     });
     this.productId = this.activatedRoute.snapshot.params['id'];
     if (this.productId) {
       this.productService.getProduct(this.productId).subscribe(data => {
@@ -50,12 +69,18 @@ export class ProductFormComponent implements OnInit {
           price: data.price,
           images: data.images,
           quantity: data.quantity,
+          sale: data.sale,
+          status: data.status,
+          category: data.category,
           desc: data.desc
         })
       });
     }
+   
+    
 
   }
+  
   // mỗi kho form controll name được thay đổi thid sẽ goi vào đây
   onValidateNameHasProduct(control: AbstractControl): ValidationErrors | null {
 
