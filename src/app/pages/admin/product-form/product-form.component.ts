@@ -111,7 +111,7 @@ export class ProductFormComponent implements OnInit {
     return this.productService.createProduct(submitData).subscribe((data) => {
       //  3. Sau khi api call thành công sẽ điều hướng về danh sách 
       // this.router.navigate(['/admin','products']);
-      this.toastr.success("Hello, I'm the toastr message.")
+      // this.toastr.success("Hello, I'm the toastr message.")
       this.router.navigateByUrl('/admin/products/list')
     })
   }

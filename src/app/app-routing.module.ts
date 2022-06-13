@@ -38,7 +38,8 @@ const routes: Routes = [
       {
         path: 'detail/:id',
         component: ProductDetailComponent
-      },
+      }
+      ,
       {
         path: 'auth',
         children: [
@@ -116,7 +117,7 @@ const routes: Routes = [
 
       }
     ]
-  },
+  }
 
 ]
 

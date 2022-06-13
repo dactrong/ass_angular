@@ -41,24 +41,10 @@ export class CategoryFormComponent implements OnInit {
     }
 
   }
-  // mỗi kho form controll name được thay đổi thid sẽ goi vào đây
-  onValidateNameHasProduct(control: AbstractControl): ValidationErrors | null {
-
-    // 1. Lấy ra value của FormControll name hiern thị
-
-    const value = control.value;
-    //  2. Kiểm tra theo điều kiện chứa từ khóa product
-    if (!value.includes('product')) {
-      return { hasProductError: true }
-    }
-    //  3. trả về kết quả nếu không lôiix
-    return null;
-
-  }
+  
 
   onSubmit() {
     console.log(this.categoryForm.get('name'));
-    //1. lấy dwux liệu từ form
     const submitData = this.categoryForm.value;
 
     if (this.categoryId !== '0' || this.categoryId !== undefined) {
@@ -70,8 +56,7 @@ export class CategoryFormComponent implements OnInit {
 
     return this.categoryService.createCategory(submitData).subscribe((data) => {
       //  3. Sau khi api call thành công sẽ điều hướng về danh sách 
-      // this.router.navigate(['/admin','products']);
-      // this.toastr.success("Hello, I'm the toastr message."),
+      
 
       this.router.navigateByUrl('/admin/category/list')
     })

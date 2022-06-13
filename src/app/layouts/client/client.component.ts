@@ -14,5 +14,7 @@ export class ClientComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+onLogout(){
+  localStorage.removeItem('loggedInUser');
+}
 }

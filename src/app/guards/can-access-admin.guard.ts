@@ -15,9 +15,12 @@ export class CanAccessAdminGuard implements CanActivate {
     state: RouterStateSnapshot
     ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     // lấy ra thông tin người dùng đã đăng nhập 
-      const loggedInUser = localStorage.getItem('loggedInUser');
+      const loggedInUser = JSON.parse (localStorage.getItem('loggedInUser')as string);
+
+      // console.log(loggedInUser.user.role ==1);
+      
    // kiểm  tra nếu có thì cho vào admin
-    if(loggedInUser){
+    if(loggedInUser.user.role==1){
       return true
     }
     // nếu khômg thì quay về màn login
